@@ -1,0 +1,74 @@
+/* RESET */
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bolder;
+}
+
+ul, 
+ol {
+    list-style-type:none;  
+}
+
+
+/*
++ irmaos
+> filhos 
+
+seletores 
+seleciona o h3 dentro do article
+article irmao de h2
+dentro do main
+
+
+main h2 + article h3 {
+    background-color: blue;
+}
+
+[atributo*] *= que contengan
+*/
+
+.ano {
+    color: #888;
+    display: block;
+    font-style: italic;
+}
+
+/*
+.profissao-item ,
+.formacao-item {
+    background-color: rgba(181,194,248,.2);
+    border-radius: 32px;
+    margin-bottom: 16px;
+    padding: 24px;
+}
+
+. representa class
+# representa id
+*/
+[class*='-item'] {
+    background-color: rgba(181,194,248,.2);
+    border-radius: 32px;
+    margin-bottom: 16px;
+    padding: 24px;
+}
+
+[class*='-item']:last-child {
+    background-color: rgba(248,181,222,.2);
+    border-radius: 32px;
+    margin-bottom: 16px;
+    padding: 24px;
+}
+
+#meuFooter {
+    background-color: turquoise;
+}
+
