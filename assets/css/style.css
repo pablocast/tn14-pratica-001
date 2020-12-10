@@ -1,6 +1,16 @@
 /* RESET */
+:root{
+    --primaria: #152ea0 ;
+    --bg1: rgba(181,194,248,.2);
+    --bg2: rgba(248,181,222,.2);
+    --bg3: rgba(162,253,182,.2);
+    --bg4: rgba(255,149,215,.2);
+    --padding: 20px;
+}
+
  * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -13,11 +23,82 @@ a {
     font-weight: bolder;
 }
 
+h1 {
+    color: var(--primaria);
+    font-family: 'Anton', Arial, Helvetica, sans-serif;
+    font-size:2rem;
+    font-weight:300;
+    margin: 24px auto;
+    text-align: center; 
+}
+
+h2,
+h3 {
+    color: var(--primaria);
+    margin: 24px auto 16px auto;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+header,
+footer{
+    background-color: var(--bg1);
+}
+
+header,
+aside,
+main,
+footer {
+    padding: var(--padding)
+}
+
+header {
+    border-bottom: 2px solid var(--primaria)
+}
+
+footer {
+    border-top: 2px solid var(--primaria);
+}
+
 ul, 
 ol {
     list-style-type:none;  
 }
 
+p {
+    color: #222;
+    line-height: 24px;
+    margin: 8px auto;
+}
+
+header img {
+    animation: bordaCamaleao 4s infinite;
+    border: 2px solid var(--primaria);
+    border-radius: 50%;
+    filter: drop-shadow(2px 2px 4px var(--bg1)) grayscale(0.5);
+    height: 96px;
+    transition: transform .8s cubic-bezier(0.42,0,1,1);
+    width: 96px;
+}
+
+header img:hover {
+    transform: rotateY(360deg);
+}
+
+#habilidades article {
+    background-color: var(--bg1);
+    border-radius: 16px 0;
+    display: inline-block ;
+    min-width: calc(50%-16px);
+    vertical-align: top;
+    min-height: 172px;
+}
 
 /*
 + irmaos
@@ -28,7 +109,6 @@ seleciona o h3 dentro do article
 article irmao de h2
 dentro do main
 
-
 main h2 + article h3 {
     background-color: blue;
 }
@@ -37,6 +117,7 @@ main h2 + article h3 {
 */
 
 .ano {
+    color: var(--primaria)
     color: #888;
     display: block;
     font-style: italic;
@@ -54,21 +135,51 @@ main h2 + article h3 {
 . representa class
 # representa id
 */
+a[href*='tel']::before {
+    content: '\0260E';
+    margin-right: 4px;
+}
+
 [class*='-item'] {
-    background-color: rgba(181,194,248,.2);
+    background-color: var(--bg1) ;
     border-radius: 32px;
     margin-bottom: 16px;
     padding: 24px;
 }
 
 [class*='-item']:last-child {
-    background-color: rgba(248,181,222,.2);
+    background-color: var(--bg2) ;
     border-radius: 32px;
     margin-bottom: 16px;
     padding: 24px;
 }
 
-#meuFooter {
-    background-color: turquoise;
+[class*='-item']:nth-child(even){
+    background-color: var(--bg3) ;
 }
 
+[class*='-item']:first-of-type{
+    background-color: var(--bg4) ;
+}
+
+#meuFooter {
+    background-color: var(--bg1);
+}
+
+@keyframes bordaCamaleao {
+    0% {
+        border: 2px solid blue;
+    }
+    25% {
+        border: 2px solid red;
+    }
+    50% {
+        border: 2px solid yellow;
+    }
+    75% {
+        border: 2px solid green;
+    }
+    100% {
+        border: 2px solid blue;
+    }
+}
